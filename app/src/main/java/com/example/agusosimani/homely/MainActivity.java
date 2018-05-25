@@ -1,15 +1,13 @@
 package com.example.agusosimani.homely;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-public class Home extends AppCompatActivity {
-
-    private TextView mTextMessage;
+public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -18,13 +16,13 @@ public class Home extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_routines:
-                    mTextMessage.setText("Routines");
+                    //setContentView(R.layout.activity_routines);
                     return true;
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    //setContentView(R.layout.activity_home);
                     return true;
                 case R.id.navigation_devices:
-                    mTextMessage.setText("Devices");
+                    //setContentView(R.layout.activity_devices);
                     return true;
             }
             return false;
@@ -36,9 +34,11 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
+        navigation.setSelectedItemId(R.id.navigation_home);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.logo);
+    }
 }

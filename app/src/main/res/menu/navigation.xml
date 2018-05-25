@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_routines"
+            android:icon="@drawable/routines"
+            android:title="Routines" />
 
-    <item
-        android:id="@+id/navigation_routines"
-        android:icon="@drawable/routines"
-        android:title="Routines" />
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/home"
+            android:title="@string/title_home"
+            android:checked="true" />
 
-    <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/home"
-        android:title="@string/title_home" />
-
-    <item
-        android:id="@+id/navigation_devices"
-        android:icon="@drawable/devices"
-        android:title="Devices" />
-
+        <item
+            android:id="@+id/navigation_devices"
+            android:icon="@drawable/devices"
+            android:title="Devices" />
+    </group>
 </menu>
