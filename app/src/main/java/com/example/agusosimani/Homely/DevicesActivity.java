@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class DevicesActivity extends AppCompatActivity {
 
-    private ArrayList<String> devices = new ArrayList<>();
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,25 +56,20 @@ public class DevicesActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.logo);
 
-        devices.add("Oven");
-        devices.add("AC");
-        devices.add("Johns lights");
-        devices.add("Living room lights");
-        devices.add("Johns computer");
-        devices.add("Hallway lights");
+        Device[] values = new Device[]{
+                new Device("Luke's bedroom light", false),
+                new Device("Hallway light", true),
+                new Device("Oven", false),
+                new Device( "AC", true),
+                new Device( "Robert's Computer", false)
+        };
 
+        DevicesArrayAdapter adapter = new DevicesArrayAdapter(this, values);
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(DevicesActivity.this, android.R.layout.simple_list_item_activated_1, devices);
-        final ListView listview = (ListView) findViewById(R.id.list_view);
-        if (listview != null){
-            listview.setAdapter(adapter);
+        ListView listView = (ListView) this.findViewById(R.id.list_view);
+        if (listView != null){
+            listView.setAdapter(adapter);
         }
 
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(DevicesActivity.this,"Activated",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }
