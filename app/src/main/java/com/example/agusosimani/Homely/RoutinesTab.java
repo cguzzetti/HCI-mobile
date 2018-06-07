@@ -10,11 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.smarthome.tp2.Singleton;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,9 +18,11 @@ import java.util.ArrayList;
 
 public class RoutinesTab extends Fragment {
 
+   /*
     private static final String TAG = "RoutinesTab";
-    static CustomRoutineListAdapter adapter;
-    static ArrayList<Routine> routines;
+
+    //static CustomRoutineListAdapter adapter;
+    //static ArrayList<Routine> routines;
     private ListView listView;
     private FloatingActionButton addRoutine;
     private View view;
@@ -43,14 +40,14 @@ public class RoutinesTab extends Fragment {
             }
         }
     }
-    /*
+
     @Override
     public void onPause() {
         super.onPause();
         //if(CustomAdapter.mySnackbar != null && CustomAdapter.mySnackbar.isShown())
           //  CustomAdapter.mySnackbar.dismiss();
     }
-*/
+
     @Override
     public void onResume() {
         super.onResume();
@@ -95,4 +92,5 @@ public class RoutinesTab extends Fragment {
         },null);
         Singleton.mRequestQueue.add(request);
     }
+    */
 }
