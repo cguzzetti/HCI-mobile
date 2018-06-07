@@ -21,6 +21,8 @@
         <activity
             android:name=".RoutinesActivity" />
         <activity android:name=".device.AddDevice"/>
+        <activity
+            android:name=".Help" />
     </application>
 
 </manifest>

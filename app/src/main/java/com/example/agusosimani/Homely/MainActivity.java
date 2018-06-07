@@ -5,7 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.agusosimani.Homely.device.DevicesTab;
 
@@ -41,10 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         loadFragment(new HomeTab());
-
-
-//        mSectionsPagerAdapter = new SectionsPageAdapter(getSupportFragmentManager());
         mNavigationBar=findViewById(R.id.navigation);
+        mNavigationBar.setSelectedItemId(R.id.navigation_home);
         mNavigationBar.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);//this
 
     }
@@ -58,6 +60,30 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, popup.getMenu());
+        popup.show();
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.help_id:
+                        Intent helpIntent = new Intent(getApplicationContext(), Help.class);
+                        startActivity(helpIntent);
+                        return true;
+                    case R.id.settings_id:
+//                        Intent settingsIntent = new Intent(getApplicationContext(), NotificationSettings.class);
+//                        startActivity(settingsIntent);
+//                        return true;
+                }
+                return true;
+            }
+        });
     }
 
 
