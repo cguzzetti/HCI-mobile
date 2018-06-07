@@ -4,7 +4,7 @@
         <item
             android:id="@+id/navigation_routines"
             android:icon="@drawable/routines"
-            android:title="Routines" />
+            android:title="@string/text_routines" />
 
         <item
             android:id="@+id/navigation_home"
@@ -15,6 +15,6 @@
         <item
             android:id="@+id/navigation_devices"
             android:icon="@drawable/devices"
-            android:title="Devices" />
+            android:title="@string/text_devices" />
     </group>
 </menu>

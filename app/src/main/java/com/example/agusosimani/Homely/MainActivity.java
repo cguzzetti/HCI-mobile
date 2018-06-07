@@ -4,30 +4,34 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static SectionsPageAdapter mSectionsPagerAdapter;
+    private static BottomNavigationView mNavigationBar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_routines:
-                    Intent intentR = new Intent(MainActivity.this, RoutinesActivity.class);
-                    startActivity(intentR);
-                    return true;
+                    fragment = new RoutinesTab();
+                    break;
                 case R.id.navigation_home:
-                    //setContentView(R.layout.activity_home);
-                    return true;
+                    fragment = new HomeTab();
+                    break;
                 case R.id.navigation_devices:
-                    Intent intentD = new Intent(MainActivity.this, DevicesActivity.class);
-                    startActivity(intentD);
-                    return true;
+                    fragment = new DevicesTab();
+                    break;
             }
-            return false;
+            return loadFragment(fragment);
         }
     };
 
@@ -36,11 +40,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.navigation_home);
+        loadFragment(new HomeTab());
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo);
+
+//        mSectionsPagerAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+        mNavigationBar=findViewById(R.id.navigation);
+        mNavigationBar.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);//this
+
     }
+
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
+
 }

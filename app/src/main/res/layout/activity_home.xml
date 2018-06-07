@@ -7,13 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="551dp"
+        android:layout_height="wrap_content"
+        android:background="#659cd6"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/toolbar_menu"
+        tools:layout_editor_absoluteY="0dp" />
+
+
     <TextView
         android:id="@+id/message"
         android:layout_width="98dp"
         android:layout_height="27dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="Devices"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Home"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,8 +39,8 @@
         android:layout_marginStart="0dp"
         android:background="?android:attr/windowBackground"
         app:itemBackground="@color/skyBlue"
-        app:itemTextColor="@color/navigation_item_color"
         app:itemIconTint="@color/navigation_item_color"
+        app:itemTextColor="@color/navigation_item_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,10 +48,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="38dp"
-        android:layout_height="49dp"
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        android:visibility="visible"
         app:srcCompat="@drawable/favorite"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="72dp" />
 
 </android.support.constraint.ConstraintLayout>
