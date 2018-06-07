@@ -21,8 +21,8 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
     private static final String TAG = "DevicesAdapter";
     private ArrayList<Device> devices = new ArrayList<>();
    // private Context context;
-    public DevicesArrayAdapter(Context context, ArrayList<Device> devices) {
-        super(context, R.layout.list_view_item , devices);
+    public DevicesArrayAdapter(Context context, int resource,  ArrayList<Device> devices) {
+        super(context, resource , devices);
         //this.devices = devices;
        // this.context = context;
     }
