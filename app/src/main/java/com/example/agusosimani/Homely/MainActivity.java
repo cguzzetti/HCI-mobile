@@ -1,13 +1,13 @@
 package com.example.agusosimani.Homely;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.example.agusosimani.Homely.device.DevicesTab;
 
 public class MainActivity extends AppCompatActivity {
 

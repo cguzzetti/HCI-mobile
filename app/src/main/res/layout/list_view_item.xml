@@ -3,30 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:weightSum="100">
+    android:weightSum="137.5">
 
+    <!-- Ver cómo no hardcodear el paddingLeft-->
     <TextView
         android:id="@+id/name"
         android:text = "@string/device_name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center_vertical"
-        android:layout_weight="25" />
+        android:paddingStart="16dp"
+        android:layout_weight="25"
+        android:textColor="@android:color/background_dark" />
 
     <ImageButton
         android:id="@+id/edit_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_weight="37.5"
-        android:src="@drawable/ic_edit" />
+        android:src="@drawable/ic_edit"
+        android:tint="@color/icon" />
 
     <ImageButton
         android:id="@+id/delete_btn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_weight="37.5"
-        android:src="@drawable/ic_delete">
-    </ImageButton>
+        android:src="@drawable/ic_delete"
+        android:tint="@color/icon" />
 
+    <Switch
+        android:id="@+id/status_switch"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
 
 </LinearLayout>

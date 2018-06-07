@@ -1,4 +1,4 @@
-package com.example.agusosimani.Homely;
+package com.example.agusosimani.Homely.device;
 
 public class Device {
     private boolean on;
@@ -9,7 +9,9 @@ public class Device {
         this.name = name;
     }
 
-
+    public String toString(){
+        return name;
+    }
     public boolean isOn(){
         return on;
     }

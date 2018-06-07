@@ -1,17 +1,15 @@
-package com.example.agusosimani.Homely;
+package com.example.agusosimani.Homely.device;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.agusosimani.Homely.R;
 
 import java.util.ArrayList;
 
@@ -21,15 +19,16 @@ public class DevicesTab extends Fragment{
     private ListView listView;
     static DevicesArrayAdapter adapter;
     private View view;
+    private FloatingActionButton addDevice;
 
     public DevicesTab(){
         super();
         devices = new ArrayList<>();
-        devices.add(new Device("dummy0",false));
-        devices.add(new Device("dummy1",false));
-        devices.add(new Device("dummy2",false));
-        devices.add(new Device("dummy3",false));
-        devices.add(new Device("dummy4",false));
+        devices.add(new Device("Dummy0",false));
+        devices.add(new Device("Dummy1",true));
+        devices.add(new Device("Dummy2",false));
+        devices.add(new Device("Dummy3",true));
+        devices.add(new Device("Dummy4",false));
 
     }
     @Override
@@ -48,6 +47,16 @@ public class DevicesTab extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         view = inflater.inflate(R.layout.device_list, container, false );
+
+        addDevice = view.findViewById(R.id.add_device);
+
+        addDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AddDevice.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

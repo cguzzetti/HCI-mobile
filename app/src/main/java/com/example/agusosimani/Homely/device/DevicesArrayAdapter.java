@@ -1,9 +1,6 @@
-package com.example.agusosimani.Homely;
+package com.example.agusosimani.Homely.device;
 
-import android.app.Activity;
 import android.content.Context;
-import android.media.Image;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +9,9 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.agusosimani.Homely.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DevicesArrayAdapter extends ArrayAdapter<Device> {
     private static final String TAG = "DevicesAdapter";
@@ -37,6 +33,7 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
             holder.nameTextView = (TextView) convertView.findViewById(R.id.name);
             holder.deleteBtnView = (ImageButton) convertView.findViewById(R.id.delete_btn);
             holder.editBtnView = (ImageButton) convertView.findViewById(R.id.edit_btn);
+            holder.switchView = (Switch) convertView.findViewById(R.id.status_switch);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();

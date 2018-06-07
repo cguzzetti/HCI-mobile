@@ -10,4 +10,18 @@
     <string name="action_settings">Settings</string>
     <string name="popup_menu_id">PopupMenu</string>
     <string name="device_name"> Devices</string>
+    <string name="add_device"> Add Device</string>
+    <string name="name"> Name </string>
+    <string name="type">Type</string>
+
+    <string-array name="types">
+        <item>Lamp</item>
+        <item>Door</item>
+        <item>Ac</item>
+        <item>Oven</item>
+        <item>Refrigerator</item>
+        <item>Timer</item>
+        <item>Blind</item>
+        <item>Alarm</item>
+    </string-array>
 </resources>

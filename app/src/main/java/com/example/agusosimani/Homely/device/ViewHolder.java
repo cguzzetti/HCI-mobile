@@ -1,4 +1,4 @@
-package com.example.agusosimani.Homely;
+package com.example.agusosimani.Homely.device;
 
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -8,5 +8,5 @@ public class ViewHolder {
     public TextView nameTextView;
     public ImageView editBtnView;
     public ImageView deleteBtnView;
-   // public Switch  switchView;
+    public Switch  switchView;
 }
