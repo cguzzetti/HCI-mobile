@@ -32,5 +32,6 @@
     <string name="notification_settings">Notification settings</string>
     <string name="help_title">Help</string>
     <string name="send_confirmation">Message sent</string>
-
+    <string name="device_name_error"> Device name can't be empty </string>
+    <string name="added_successfully"> Device added successfully </string>
 </resources>
