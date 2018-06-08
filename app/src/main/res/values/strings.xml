@@ -8,6 +8,7 @@
     <string name="text_routines">Routines</string>
     <string name="text_home">Home</string>
     <string name="text_favourite_devices">Favourite Devices</string>
+    <string name="text_favourite_routines">Favourite Routines</string>
     <string name="action_settings">Settings</string>
     <string name="popup_menu_id">PopupMenu</string>
     <string name="device_name"> Devices</string>
