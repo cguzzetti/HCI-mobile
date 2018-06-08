@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -91,9 +91,8 @@
                 android:id="@+id/table_row_type"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="10"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
-                >
+                android:layout_weight="10">
 
                 <LinearLayout
                     android:id="@+id/row2"
@@ -116,16 +115,48 @@
 
                     <Spinner
                         android:id="@+id/type"
-                        android:layout_width="match_parent"
+                        android:layout_width="188dp"
                         android:layout_height="match_parent"
                         android:layout_weight="20"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
 
                 </LinearLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/favorite_space" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="149dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/name"
+                    android:text="@string/mark_favorite"
+                    android:textColor="@android:color/background_dark" />
+
+                <ImageView
+                    android:id="@+id/favButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/btn_star_big_on" />
+
             </TableRow>
         </TableLayout>
 
     </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
 
 
 </android.support.constraint.ConstraintLayout>

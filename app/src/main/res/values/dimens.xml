@@ -9,4 +9,6 @@
     <dimen name="floating_margin">53dip</dimen>
     <dimen name="column_width">100dp</dimen>
     <dimen name="title">40dp</dimen>
+    <dimen name="favorite_space">50dp</dimen>
+    <dimen name="favorite_alignment"> 20dp</dimen>
 </resources>
