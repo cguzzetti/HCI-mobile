@@ -1,5 +1,6 @@
 package com.example.agusosimani.Homely;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         loadFragment(new HomeTab());
         mNavigationBar=findViewById(R.id.navigation);
         mNavigationBar.setSelectedItemId(R.id.navigation_home);

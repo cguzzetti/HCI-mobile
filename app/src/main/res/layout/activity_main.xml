@@ -22,15 +22,21 @@
             android:orientation="horizontal"
             android:weightSum="100">
 
-
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="56dp"
                 android:layout_weight="15"
                 android:background="@color/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:title="@string/app_name">
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <ImageView
+                    android:id="@+id/logoXmarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/logo" />
+
             </android.support.v7.widget.Toolbar>
 
             <ImageButton

@@ -14,6 +14,7 @@
     <string name="add_device"> Add Device</string>
     <string name="name"> Name </string>
     <string name="type">Type</string>
+    <string name="add_routine">Add Routine</string>
 
     <string-array name="types">
         <item>Lamp</item>
@@ -34,4 +35,5 @@
     <string name="send_confirmation">Message sent</string>
     <string name="device_name_error"> Device name can't be empty </string>
     <string name="added_successfully"> Device added successfully </string>
+
 </resources>
