@@ -21,13 +21,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="87dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/text_favourite_devices"
-                    android:src="@drawable/favorite" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -35,7 +32,7 @@
                     android:layout_weight="1"
                     android:text="@string/text_favourite_devices"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:visibility="visible" />
 
             </LinearLayout>
