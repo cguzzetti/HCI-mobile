@@ -16,6 +16,7 @@
         android:layout_weight="25"
         android:textColor="@android:color/background_dark" />
 
+
     <ImageButton
         android:id="@+id/edit_btn"
         android:layout_width="match_parent"
@@ -31,10 +32,10 @@
         android:layout_weight="37.5"
         android:src="@drawable/ic_delete"
         android:tint="@color/icon" />
-
     <Switch
         android:id="@+id/status_switch"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:layout_weight="37.5"/>
 
 </LinearLayout>
