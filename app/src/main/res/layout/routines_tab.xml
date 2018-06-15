@@ -21,7 +21,9 @@
             android:id="@+id/add_routine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="20dip"
+            android:layout_marginEnd="16dp"
             android:tint="@android:color/background_light"
             app:backgroundTint="@color/colorAccent"
             app:srcCompat="@android:drawable/ic_input_add" />

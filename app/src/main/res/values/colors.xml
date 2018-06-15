@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#659DD7</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#f16876</color>
     <color name="skyBlue">#659DD7</color>
     <color name="icon">#5c5b5b</color>
 </resources>
