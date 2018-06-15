@@ -10,7 +10,17 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.agusosimani.Homely.API;
 import com.example.agusosimani.Homely.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 public class AddDevice extends Activity {
     private static final String TAG = "AddDevice";
@@ -20,11 +30,27 @@ public class AddDevice extends Activity {
     private static ImageButton save, back;
     private String name;
     private String typeSelection;
+    private static HashMap<String,String> typeMap;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_device);
 
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, API.baseUrl + "devicetypes", new JSONObject(), new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try{
+                    JSONArray array = response.getJSONArray("devices");
+                    typeMap = new HashMap<>();
+                    for(int i =0; i< array.length(); i++){
+                        typeMap.put(array.getJSONObject(i).getString("name"), array.getJSONObject(i).getString("id"));
+                    }
+                }catch(JSONException e){
+
+                }
+            }
+        }, null);
+        API.mRequestQueue.add(request);
         setUpType();
         save = findViewById(R.id.save);
         back = findViewById(R.id.back_arrow);
@@ -44,8 +70,22 @@ public class AddDevice extends Activity {
                 if (name.length() ==0){
                     nameInput.setError(getResources().getString(R.string.device_name_error));
                 }else{
-                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.added_successfully), Toast.LENGTH_LONG).show();
-                    finish();
+                    JSONObject json = new JSONObject();
+                    try{
+                        json.put("typeId", typeMap.get(typeSelection.toString().toLowerCase()));
+                        json.put("name", name);
+                        json.put("meta", "{ type: " + typeSelection.toString().toLowerCase() + " }");
+                    }catch(JSONException e){
+
+                    }
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, API.baseUrl + "devices", json, new Response.Listener<JSONObject>(){
+                        @Override
+                        public void onResponse(JSONObject response){
+                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.added_successfully), Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }, null);
+                    API.mRequestQueue.add(request);
                 }
             }
         });
