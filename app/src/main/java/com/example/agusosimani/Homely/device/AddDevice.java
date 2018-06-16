@@ -44,14 +44,13 @@ public class AddDevice extends Activity {
             @Override
             public void onResponse(JSONObject response) {
                 try{
-                    System.out.println("Entre, chamigo");
                     JSONArray array = response.getJSONArray("devices");
                     typeMap = new HashMap<>();
                     for(int i =0; i< array.length(); i++){
                         typeMap.put(array.getJSONObject(i).getString("name"), array.getJSONObject(i).getString("id"));
                     }
                 }catch(JSONException e){
-                    System.out.println("Upa, un error");
+
                 }
             }
         }, new Response.ErrorListener(){

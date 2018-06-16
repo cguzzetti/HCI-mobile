@@ -47,9 +47,7 @@ public class DevicesTab extends Fragment{
             public void onResponse(JSONObject response) {
                 try{
                    devices = new ArrayList<>();
-                    System.out.println("Entre al  request");
                     JSONArray array =response.getJSONArray("devices");
-                    System.out.println(array.toString());
                     for(int i =0; i< array.length(); i++){
                         Device toAdd = null;
                         switch(array.getJSONObject(i).getString("typeId")){
@@ -89,7 +87,6 @@ public class DevicesTab extends Fragment{
                 }
             }
         }, null);
-    System.out.println("Updated " + devices.toString());
     API.mRequestQueue.add(request);
 
     }
