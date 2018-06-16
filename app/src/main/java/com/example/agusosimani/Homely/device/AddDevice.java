@@ -1,6 +1,7 @@
 package com.example.agusosimani.Homely.device;
 
 import android.app.Activity;
+import android.content.SyncStatusObserver;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,7 +12,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.agusosimani.Homely.API;
 import com.example.agusosimani.Homely.R;
@@ -20,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.SQLOutput;
 import java.util.HashMap;
 
 public class AddDevice extends Activity {
@@ -40,18 +44,27 @@ public class AddDevice extends Activity {
             @Override
             public void onResponse(JSONObject response) {
                 try{
+                    System.out.println("Entre, chamigo");
                     JSONArray array = response.getJSONArray("devices");
                     typeMap = new HashMap<>();
                     for(int i =0; i< array.length(); i++){
                         typeMap.put(array.getJSONObject(i).getString("name"), array.getJSONObject(i).getString("id"));
                     }
                 }catch(JSONException e){
-
+                    System.out.println("Upa, un error");
                 }
             }
-        }, null);
-        API.mRequestQueue.add(request);
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+                System.out.println(error.toString());
+            }
+        });
+
+       API.mRequestQueue.add(request);
+
         setUpType();
+
         save = findViewById(R.id.save);
         back = findViewById(R.id.back_arrow);
         nameInput = findViewById(R.id.name);
@@ -74,10 +87,13 @@ public class AddDevice extends Activity {
                     try{
                         json.put("typeId", typeMap.get(typeSelection.toString().toLowerCase()));
                         json.put("name", name);
-                        json.put("meta", "{ type: " + typeSelection.toString().toLowerCase() + " }");
+                        //json.put("meta", "{ type: " + typeSelection.toString().toLowerCase() + " }");
+                        json.put("meta", "{}");
                     }catch(JSONException e){
 
                     }
+
+                    
                     JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, API.baseUrl + "devices", json, new Response.Listener<JSONObject>(){
                         @Override
                         public void onResponse(JSONObject response){
@@ -86,7 +102,9 @@ public class AddDevice extends Activity {
                         }
                     }, null);
                     API.mRequestQueue.add(request);
+                    finish();
                 }
+
             }
         });
     }

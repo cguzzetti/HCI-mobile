@@ -10,7 +10,7 @@ import com.android.volley.toolbox.Volley;
 
 public class API {
     public static RequestQueue mRequestQueue;
-    public final static String baseUrl  = "http://127.0.0.1:8080/api";
+    public final static String baseUrl  = "http://10.0.2.2:8080/api/";
     public static NotificationManager nManager;
     public static MainActivity mainActivity;
     public static String channelId;
@@ -22,4 +22,5 @@ public class API {
         mRequestQueue = Volley.newRequestQueue(mainActivity);
         nManager = (NotificationManager) mainActivity.getSystemService(Context.NOTIFICATION_SERVICE);
     }
+
 }

@@ -17,10 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".device.AddDevice"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.agusosimani.Homely.MainActivity" />
+        </activity>
         <activity
             android:name=".RoutinesActivity" />
-        <activity android:name=".device.AddDevice"/>
         <activity
             android:name=".Help" />
     </application>

@@ -3,9 +3,12 @@ package com.example.agusosimani.Homely.device;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Device {
     private boolean on;
-    private String name, id;
+    private String name, id, type;
 
     protected Response.Listener doNothing = new Response.Listener() {
         @Override
@@ -20,9 +23,14 @@ public class Device {
         }
     };
 
-    Device(String name, boolean on) {
-        this.on = on;
-        this.name = name;
+    Device(JSONObject obj) {
+        try {
+            this.name = obj.getString("name");
+            this.id = obj.getString("id");
+            this.type  = obj.getString("deviceId");
+        }catch(JSONException e){
+
+        }
     }
 
     public boolean equals(Object o){
