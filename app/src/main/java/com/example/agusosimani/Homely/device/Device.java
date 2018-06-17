@@ -6,6 +6,8 @@ import com.android.volley.VolleyError;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Pattern;
+
 public class Device {
     private boolean on;
     private String name, id, type;
@@ -27,7 +29,16 @@ public class Device {
         try {
             this.name = obj.getString("name");
             this.id = obj.getString("id");
-            this.type  = obj.getString("deviceId");
+            this.type  = obj.getString("typeId");
+            System.out.println(obj.getString("meta"));
+            /*
+             *  Por alguna razón el getJSONObject de meta no me funciona, así que hay que hardcodear
+             */
+            if ("{ status: false }".equals(obj.getString("meta"))){
+                on = false;
+            }else{
+                on = true;
+            }
         }catch(JSONException e){
 
         }
@@ -64,6 +75,10 @@ public class Device {
 
     public String getId(){
         return id;
+    }
+
+    public String getTypeID(){
+        return type;
     }
 
 

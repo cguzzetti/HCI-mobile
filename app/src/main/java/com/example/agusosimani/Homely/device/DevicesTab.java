@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -29,11 +30,6 @@ public class DevicesTab extends Fragment{
     private View view;
     private FloatingActionButton addDevice;
 
-
-    public DevicesTab(){
-        super();
-        devices = new ArrayList<>();
-    }
     @Override
     public void onResume(){
         update();
@@ -41,11 +37,11 @@ public class DevicesTab extends Fragment{
     }
 
     public void update(){
-        System.out.println("Entro");
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, API.baseUrl + "devices", new JSONObject(), new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try{
+
                    devices = new ArrayList<>();
                     JSONArray array =response.getJSONArray("devices");
                     for(int i =0; i< array.length(); i++){
