@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class Device {
     private boolean on;
     private String name, id, type;
+    private boolean notificationsActivated;
 
     protected Response.Listener doNothing = new Response.Listener() {
         @Override
@@ -30,7 +31,6 @@ public class Device {
             this.name = obj.getString("name");
             this.id = obj.getString("id");
             this.type  = obj.getString("typeId");
-            System.out.println(obj.getString("meta"));
             /*
              *  Por alguna razón el getJSONObject de meta no me funciona, así que hay que hardcodear
              */
@@ -39,8 +39,9 @@ public class Device {
             }else{
                 on = true;
             }
+            notificationsActivated = false; //Empieza siempre en false
         }catch(JSONException e){
-
+            //error handling
         }
     }
 
@@ -53,6 +54,10 @@ public class Device {
 
     }
 
+    public int hashCode(){
+        return id.hashCode();
+    }
+
     public String toString(){
         return name;
     }
@@ -62,6 +67,18 @@ public class Device {
 
     public void changeStatus(){
         this.on = !this.on;
+    }
+
+    public boolean isNotificationsActivated() {
+        return notificationsActivated;
+    }
+
+    public void turnOnNotifications(){
+        notificationsActivated = true;
+    }
+
+    public void turnOffNotifications(){
+        notificationsActivated = false;
     }
 
     //getter and setters

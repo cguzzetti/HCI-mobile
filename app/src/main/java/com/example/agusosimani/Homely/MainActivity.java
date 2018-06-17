@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(helpIntent);
                         return true;
                     case R.id.settings_id:
-//                        Intent settingsIntent = new Intent(getApplicationContext(), NotificationSettings.class);
-//                        startActivity(settingsIntent);
-//                        return true;
+                        Intent settingsIntent = new Intent(getApplicationContext(), NotificationSettings.class);
+                        startActivity(settingsIntent);
+                        return true;
                 }
                 return true;
             }

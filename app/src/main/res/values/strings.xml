@@ -16,6 +16,9 @@
     <string name="name"> Name </string>
     <string name="type">Type</string>
     <string name="add_routine">Add Routine</string>
+    <string name="changes_saved">Changes saved.</string>
+    <string name="text_off">Off</string>
+    <string name="text_on">On</string>
 
     <string-array name="types">
         <item>Lamp</item>

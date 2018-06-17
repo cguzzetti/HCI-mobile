@@ -1,0 +1,66 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <ImageButton
+                android:id="@+id/back_arrow"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_backwards"
+                android:tint="@android:color/background_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="382dp"
+                android:layout_height="55dp"
+                android:layout_weight="60"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/notification_settings"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/header" />
+
+            <ImageButton
+                android:id="@+id/save"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_ok"
+                android:tint="@android:color/background_light"
+                android:visibility="visible" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+</android.support.constraint.ConstraintLayout>

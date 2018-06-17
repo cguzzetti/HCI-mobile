@@ -104,4 +104,7 @@ public class DevicesTab extends Fragment{
         return view;
     }
 
+    public static ArrayList<Device> getDevices() {
+        return devices;
+    }
 }
