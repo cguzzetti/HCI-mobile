@@ -39,8 +39,8 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
             holder = new ViewHolder();
             String deviceName = getItem(position).getName();
             holder.nameTextView = (TextView) convertView.findViewById(R.id.name);
-            holder.deleteBtnView = (ImageButton) convertView.findViewById(R.id.delete_btn);
-            holder.editBtnView = (ImageButton) convertView.findViewById(R.id.edit_btn);
+        //    holder.deleteBtnView = (ImageButton) convertView.findViewById(R.id.delete_btn);
+        //    holder.editBtnView = (ImageButton) convertView.findViewById(R.id.edit_btn);
             holder.switchView = (Switch) convertView.findViewById(R.id.status_switch);
            // boolean status = getItem(position).isOn();
             boolean status = devices.get(position).isOn();

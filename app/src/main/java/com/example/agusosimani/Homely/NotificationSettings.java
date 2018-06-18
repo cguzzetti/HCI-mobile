@@ -50,13 +50,11 @@ public class NotificationSettings extends Activity {
     }
 
     public void update(){
+
         for (Map.Entry<Device, Boolean> e : devicesChangedMap.entrySet()) {
             devicesMap.put(e.getKey(), e.getValue());
-            if(e.getValue())
-                e.getKey().turnOnNotifications();
-            else
-                e.getKey().turnOffNotifications();
-            System.out.println(e.getKey().isNotificationsActivated());
+
         }
+
     }
 }

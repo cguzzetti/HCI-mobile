@@ -76,7 +76,7 @@ public class NotificationsAdapter extends ArrayAdapter<Device>{
 
         //viewHolder.btnState.setChecked(device.isNotificationsActivated());
 
-        for (Map.Entry<Device, Boolean> e : NotificationSettings.devicesMap.entrySet()) {
+         for (Map.Entry<Device, Boolean> e : NotificationSettings.devicesMap.entrySet()) {
             if (e.getKey().getId().equals(device.getId()))
                 viewHolder.btnState.setChecked(e.getValue());
         }
@@ -86,19 +86,22 @@ public class NotificationsAdapter extends ArrayAdapter<Device>{
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 String deviceName = viewHolder.tvDeviceName.getText().toString();
                 final Device device = getItem(position);
-                /*
-                if(b)
-                    device.turnOnNotifications();
-                else
-                    device.turnOffNotifications();
-                    */
+                if (device != null){
+                    if(b) {
+                        device.turnOnNotifications();
+                    }else {
+                        device.turnOffNotifications();
+
+                    }
+                }
+
                 NotificationSettings.devicesChangedMap.put(device,b);
-                /*
+
                 for (Device d:devices) {
                     if(d.getName().equals(deviceName))
                         NotificationSettings.devicesChangedMap.put(d, b);
                 }
-                */
+
             }
         });
 
