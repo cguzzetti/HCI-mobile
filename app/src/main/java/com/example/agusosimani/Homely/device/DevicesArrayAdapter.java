@@ -104,14 +104,16 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
     }
 
     public void createNotif(int position){
+        String cond = devices.get(position).isOn()?API.mainActivity.getResources().getString(R.string.text_on):API.mainActivity.getResources().getString(R.string.text_off);
         Notification notif = new Notification();
         Notification notification = new Notification.Builder(getContext())
-                .setContentTitle("Device " + devices.get(position).getName())
-                .setContentText("ESTO RE FUNCA MAESTRO")
+                .setContentTitle(API.mainActivity.getResources().getString(R.string.title_notifications))
+                .setContentText(API.mainActivity.getResources().getString(R.string.device) +" " + devices.get(position).getName()+ " " + API.mainActivity.getResources().getString(R.string.notif_text)+ " " + cond)
                 .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
                 .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
-                //  .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.stat_sys_download_done))
-                .setSmallIcon(android.R.drawable.stat_sys_download_done).build();
+                .setPriority(Notification.PRIORITY_MAX)
+                //.setSmallIcon(android.R.drawable.stat_sys_download_done).build();
+                .setSmallIcon(R.drawable.app_logo).build();
 
         // Ignore deprecated warning. In newer devices SDK 16+ should use build() method.
         // getNotification() method internally calls build() method.
