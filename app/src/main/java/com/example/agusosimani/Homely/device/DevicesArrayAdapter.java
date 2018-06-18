@@ -94,22 +94,29 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
                 });
                 API.mRequestQueue.add(request);
                 devices.get(position).changeStatus();
+                Boolean condition = NotificationSettings.devicesMap.get(devices.get(position));
+                if(condition != null && condition) createNotif(position);
 
-                Notification notif = new Notification();
-                Notification notification = new Notification.Builder(getContext())
-                        .setContentTitle("Device " + devices.get(position).getName())
-                        .setContentText("ESTO RE FUNCA MAESTRO")
-                        .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
-                        .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
-                        //  .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.stat_sys_download_done))
-                        .setSmallIcon(android.R.drawable.stat_sys_download_done).build();
 
-                // Ignore deprecated warning. In newer devices SDK 16+ should use build() method.
-                // getNotification() method internally calls build() method.
-                API.nManager.notify(API.channelId, notification);
             }
         });
         return convertView;
+    }
+
+    public void createNotif(int position){
+        Notification notif = new Notification();
+        Notification notification = new Notification.Builder(getContext())
+                .setContentTitle("Device " + devices.get(position).getName())
+                .setContentText("ESTO RE FUNCA MAESTRO")
+                .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+                .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
+                //  .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.stat_sys_download_done))
+                .setSmallIcon(android.R.drawable.stat_sys_download_done).build();
+
+        // Ignore deprecated warning. In newer devices SDK 16+ should use build() method.
+        // getNotification() method internally calls build() method.
+        API.nManager.notify(API.channelId, notification);
+
     }
 }
 

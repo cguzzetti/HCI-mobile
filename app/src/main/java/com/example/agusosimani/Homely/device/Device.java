@@ -38,10 +38,10 @@ public class Device {
             /*
              *  Por alguna razón el getJSONObject de meta no me funciona, así que hay que hardcodear
              */
-            if ("{ status: false }".equals(obj.getString("meta"))){
-                on = false;
-            }else{
+            if ("{ status: true }".equals(obj.getString("meta"))){
                 on = true;
+            }else{
+                on = false;
             }
             notificationsActivated = false; //Empieza siempre en false
         }catch(JSONException e){
