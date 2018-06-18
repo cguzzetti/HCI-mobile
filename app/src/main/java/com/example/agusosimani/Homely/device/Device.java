@@ -1,7 +1,11 @@
 package com.example.agusosimani.Homely.device;
 
+import android.app.Notification;
+import android.provider.Settings;
+
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.example.agusosimani.Homely.API;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +47,7 @@ public class Device {
         }catch(JSONException e){
             //error handling
         }
+
     }
 
     public boolean equals(Object o){

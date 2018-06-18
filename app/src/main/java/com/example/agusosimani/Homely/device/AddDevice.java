@@ -87,9 +87,7 @@ public class AddDevice extends Activity {
                         json.put("typeId", typeMap.get(typeSelection.toString().toLowerCase()));
                         json.put("name", name);
                         //json.put("meta", "{ type: " + typeSelection.toString().toLowerCase() + " }");
-                        JSONObject aux = new JSONObject();
-                        aux.put("status", false);
-                        json.put("meta", aux);
+                        json.put("meta", "{ status: false }");
                     }catch(JSONException e){
 
                     }

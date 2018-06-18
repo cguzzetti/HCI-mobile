@@ -1,6 +1,11 @@
 package com.example.agusosimani.Homely.device;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.agusosimani.Homely.API;
+import com.example.agusosimani.Homely.NotificationSettings;
 import com.example.agusosimani.Homely.R;
 
 import org.json.JSONException;
@@ -88,6 +94,19 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
                 });
                 API.mRequestQueue.add(request);
                 devices.get(position).changeStatus();
+
+                Notification notif = new Notification();
+                Notification notification = new Notification.Builder(getContext())
+                        .setContentTitle("Device " + devices.get(position).getName())
+                        .setContentText("ESTO RE FUNCA MAESTRO")
+                        .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+                        .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
+                        //  .setLargeIcon(BitmapFactory.decodeResource(getResources(), android.R.drawable.stat_sys_download_done))
+                        .setSmallIcon(android.R.drawable.stat_sys_download_done).build();
+
+                // Ignore deprecated warning. In newer devices SDK 16+ should use build() method.
+                // getNotification() method internally calls build() method.
+                API.nManager.notify(API.channelId, notification);
             }
         });
         return convertView;

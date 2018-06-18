@@ -1,5 +1,11 @@
 package com.example.agusosimani.Homely;
 
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.provider.Settings;
+
 import com.example.agusosimani.Homely.device.Device;
 
 import java.util.ArrayList;
@@ -20,5 +26,6 @@ public class Notifications {
     public boolean contains(Device d){
         return devicesWithNotifications.contains(d);
     }
+
 }
 

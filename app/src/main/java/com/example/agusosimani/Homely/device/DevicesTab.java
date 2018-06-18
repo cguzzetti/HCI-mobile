@@ -1,6 +1,10 @@
 package com.example.agusosimani.Homely.device;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -84,7 +88,6 @@ public class DevicesTab extends Fragment{
             }
         }, null);
     API.mRequestQueue.add(request);
-
     }
 
     @Override

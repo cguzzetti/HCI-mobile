@@ -13,11 +13,11 @@ public class API {
     public final static String baseUrl  = "http://10.0.2.2:8080/api/";
     public static NotificationManager nManager;
     public static MainActivity mainActivity;
-    public static String channelId;
+    public static int channelId;
 
     public static void init(MainActivity mainActiv){
         mainActivity = mainActiv;
-        channelId = "1";
+        channelId = 1;
         mRequestQueue = Volley.newRequestQueue(mainActivity);
         nManager = (NotificationManager) mainActivity.getSystemService(Context.NOTIFICATION_SERVICE);
     }
