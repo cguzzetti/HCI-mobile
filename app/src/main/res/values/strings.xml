@@ -19,6 +19,7 @@
     <string name="changes_saved">Changes saved.</string>
     <string name="text_off">Off</string>
     <string name="text_on">On</string>
+    <string name="tab_text_devices">Devices</string>
 
     <string-array name="types">
         <item>Lamp</item>
@@ -40,4 +41,8 @@
     <string name="device_name_error"> Device name can\'t be empty </string>
     <string name="added_successfully"> Device added successfully </string>
     <string name="mark_favorite"> Mark as favorite </string>
+    <string name="run">Run</string>
+    <string name="routine">Routine</string>
+    <string name="routine_added">Added a routine.</string>
+    <string name="run_routine">Routine executed.</string>
 </resources>

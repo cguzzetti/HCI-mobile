@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <ImageButton
+                android:id="@+id/back_arrow"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:src="@drawable/ic_backwards"
+                android:tint="@android:color/background_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="382dp"
+                android:layout_height="55dp"
+                android:layout_weight="60"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/routine"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@android:color/background_light"
+                android:textSize="@dimen/header" />
+
+            <ImageButton
+                android:id="@+id/save"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:src="@drawable/ic_ok"
+                android:tint="@android:color/background_light" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="454dp"
+        android:stretchColumns="*"
+        android:weightSum="100"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TableRow
+            android:id="@+id/table_row_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10">
+
+            <TextView
+                android:id="@+id/state_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="@string/tab_text_devices"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="@dimen/header" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/table_row_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="90">
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableRow>
+    </TableLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="bottom">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/floating_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:tint="@android:color/background_light"
+            app:backgroundTint="@color/colorAccent"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>
