@@ -23,7 +23,6 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.agusosimani.Homely.device.Device;
 import com.example.agusosimani.Homely.device.DevicesTab;
-import com.example.agusosimani.Homely.device.Dummy;
 import com.example.agusosimani.Homely.routine.RoutinesTab;
 
 import org.json.JSONException;
@@ -176,27 +175,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    public static void addDummy(){
-        JSONObject json = new JSONObject();
-        try {
-            json.put("typeId", "lsf78ly0eqrjbz91");
-            json.put("name", "dummy");
-            json.put("meta", "{ type: dummy }");
-        }
-        catch(JSONException e){
-
-        }
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,API.baseUrl+"devices", json, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                dummy = new Dummy(response);
-            }
-        },null);
-        API.mRequestQueue.add(request);
-    }
-
-    public static Device getDummy(){
-        return dummy;
-    }
 }

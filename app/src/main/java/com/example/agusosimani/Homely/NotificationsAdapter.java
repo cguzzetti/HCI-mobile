@@ -86,16 +86,15 @@ public class NotificationsAdapter extends ArrayAdapter<Device>{
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 String deviceName = viewHolder.tvDeviceName.getText().toString();
                 final Device device = getItem(position);
-                if (device != null){
+                if (viewHolder.btnState.isPressed()){
                     if(b) {
                         device.turnOnNotifications();
                     }else {
                         device.turnOffNotifications();
 
                     }
+                    NotificationSettings.devicesChangedMap.put(device,b);
                 }
-
-                NotificationSettings.devicesChangedMap.put(device,b);
 
                 for (Device d:devices) {
                     if(d.getName().equals(deviceName))

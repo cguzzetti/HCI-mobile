@@ -15,7 +15,6 @@ public class API {
     public static MainActivity mainActivity;
     public static String channelId;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public static void init(MainActivity mainActiv){
         mainActivity = mainActiv;
         channelId = "1";
