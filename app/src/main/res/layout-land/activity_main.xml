@@ -48,7 +48,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:contentDescription="@string/popup_menu_id"
                 android:cropToPadding="false"
-                android:onClick="help"
+                android:onClick="settings"
                 android:src="@drawable/baseline_notifications_none_white_18dp"
                 android:tint="@android:color/background_light" />
 
@@ -62,7 +62,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:contentDescription="@string/popup_menu_id"
                 android:cropToPadding="false"
-                android:onClick="settings"
+                android:onClick="help"
                 android:src="@drawable/baseline_help_white_18dp"
                 android:tint="@android:color/background_light" />
 

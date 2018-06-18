@@ -36,15 +36,6 @@ public class RoutinesTab extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.routines_tab, container, false);
-        addRoutine = view.findViewById(R.id.add_routine);
-        addRoutine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), AddRoutine.class);
-                startActivity(intent);
-            }
-        });
-
         update();
         return view;
     }
