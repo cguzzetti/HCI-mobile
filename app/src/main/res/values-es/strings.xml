@@ -21,7 +21,9 @@
     <string name="text_off">Apagado</string>
     <string name="text_on">Prendido</string>
     <string name="tab_text_devices">Dispositivos</string>
-
+    <string name="notif_title"> Homely: El administrador de casas inteligentes </string>
+    <string name="notf_text"> ha sido </string>
+    <string name="device"> Dispositivo</string>
     <string-array name="types">
         <item>Lámpara</item>
         <item>Puerta</item>
