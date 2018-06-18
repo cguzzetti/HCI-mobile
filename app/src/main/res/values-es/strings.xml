@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Homely</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Tablero</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+    <string name="text_devices">Dispositivos</string>
+    <string name="text_routines">Rutinas</string>
+    <string name="text_home">Inicio</string>
+    <string name="text_favourite_devices">Dispositivos Favoritos</string>
+    <string name="text_favourite_routines">Rutinas Favoritas</string>
+    <string name="action_settings">Configuración</string>
+    <string name="popup_menu_id">Menú Desplegable</string>
+    <string name="device_name"> Dispositivos</string>
+    <string name="add_device"> Añadir Dispositivo</string>
+    <string name="name"> Nombre </string>
+    <string name="type">Tipo</string>
+    <string name="add_routine">Añadir Rutina</string>
+    <string name="changes_saved">Cambios guardados.</string>
+    <string name="text_off">Apagado</string>
+    <string name="text_on">Prendido</string>
+    <string name="tab_text_devices">Dispositivos</string>
+
+    <string-array name="types">
+        <item>Lámpara</item>
+        <item>Puerta</item>
+        <item>Ac</item>
+        <item>Horno</item>
+        <item>Heladera</item>
+        <item>Temporizador</item>
+        <item>Cortina</item>
+        <item>Alarma</item>
+    </string-array>
+    <string name="help_center">Centro de Ayuda</string>
+    <string name="need_help">Contáctenos</string>
+    <string name="subject_title">Asunto</string>
+    <string name="description">Descripción</string>
+    <string name="notification_settings">Configuración de las notificaciones</string>
+    <string name="help_title">Ayuda</string>
+    <string name="send_confirmation">Mensaje enviado</string>
+    <string name="device_name_error"> El nombre del dispositivo no puede quedar vacío </string>
+    <string name="added_successfully"> Dispositivo añadido correctamente </string>
+    <string name="mark_favorite"> Seleccionar como favorito </string>
+    <string name="run">Ejecutar</string>
+    <string name="routine">Rutina</string>
+    <string name="routine_added">Rutina añadida.</string>
+    <string name="run_routine">Rutina ejecutada.</string>
+</resources>
