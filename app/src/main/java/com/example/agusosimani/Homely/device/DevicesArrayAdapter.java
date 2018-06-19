@@ -45,10 +45,7 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
             holder = new ViewHolder();
             String deviceName = getItem(position).getName();
             holder.nameTextView = (TextView) convertView.findViewById(R.id.name);
-        //    holder.deleteBtnView = (ImageButton) convertView.findViewById(R.id.delete_btn);
-        //    holder.editBtnView = (ImageButton) convertView.findViewById(R.id.edit_btn);
             holder.switchView = (Switch) convertView.findViewById(R.id.status_switch);
-           // boolean status = getItem(position).isOn();
             boolean status = devices.get(position).isOn();
 
             if (status){
@@ -114,11 +111,10 @@ public class DevicesArrayAdapter extends ArrayAdapter<Device> {
                 .setPriority(Notification.PRIORITY_MAX)
                 //.setSmallIcon(android.R.drawable.stat_sys_download_done).build();
                 .setSmallIcon(R.drawable.app_logo).build();
-
-        // Ignore deprecated warning. In newer devices SDK 16+ should use build() method.
-        // getNotification() method internally calls build() method.
+        
         API.nManager.notify(API.channelId, notification);
 
     }
+
 }
 
