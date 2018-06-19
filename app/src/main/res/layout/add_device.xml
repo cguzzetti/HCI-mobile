@@ -141,11 +141,10 @@
                     android:text="@string/mark_favorite"
                     android:textColor="@android:color/background_dark" />
 
-                <ImageView
-                    android:id="@+id/favButton"
+                <CheckBox
+                    android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/btn_star_big_on" />
+                    android:layout_height="wrap_content" />
 
             </TableRow>
         </TableLayout>
